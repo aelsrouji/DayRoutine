@@ -5,7 +5,6 @@ import java.io.ObjectInputStream;
 /**
  * Created by elsrouay on 11/23/2016.
  */
-@SuppressWarnings("DefaultFileTemplate")
 class deserializeEvent {
     public static void main(String[] args) {
         Event e = null;
@@ -24,10 +23,11 @@ class deserializeEvent {
             return;
         }
 
-        System.out.println("Deserialized Event...");
+        System.out.println("The event you entered is:");
+        System.out.println("Title: " + e.getTitle());
         System.out.println("Start: " + e.getStartTime());
         System.out.println("End: " + e.getEndTime());
-        System.out.println("Title: " + e.getTitle());
+
 
     }
 }
