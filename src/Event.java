@@ -6,8 +6,8 @@ import java.util.Date;
  * Created by elsrouay on 11/21/2016.
  */
 public class Event {
-    Date date;
-    String Title;
+    private Date date;
+    private String Title;
     private Date startTime;
     private Date endTime;
 
@@ -67,8 +67,6 @@ public class Event {
             System.out.println("Event added.");
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-
         }
     }
 
@@ -78,7 +76,6 @@ public class Event {
             System.out.println("Event has been edited.");
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
         }
     }
 
@@ -87,8 +84,6 @@ public class Event {
             System.out.println("Event has been deleted.");
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-
         }
 
     }
