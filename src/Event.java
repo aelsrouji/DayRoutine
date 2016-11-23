@@ -1,11 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.Serializable;
 import java.util.Date;
+
 
 /**
  * Created by elsrouay on 11/21/2016.
+ * Serialization reference: http://www.tutorialspoint.com/java/java_serialization.htm
  */
-public class Event {
+class Event
+        implements Serializable {
     private Date date;
     private String Title;
     private Date startTime;
@@ -25,7 +31,23 @@ public class Event {
             JMenuBar menuBar = new JMenuBar();
             JMenu menuFile = new JMenu("File");
             JMenuItem menuItemExit = new JMenuItem("Exit");
-            JMenuItem menuItemAdd = new JMenuItem("Add Event");
+            final JMenuItem menuItemAdd = new JMenuItem("Add Event");
+
+            menuItemExit.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent actionEvent) {
+                    //testing deserializeEvent before exit
+                    deserializeEvent.main(null);
+                    System.exit(0);
+                }
+            });
+
+            menuItemAdd.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent actionEvent) {
+                    addEvent();
+                }
+            });
+
+
             menuFile.add(menuItemAdd);
             menuFile.add(menuItemExit);
             menuBar.add(menuFile);
@@ -64,7 +86,9 @@ public class Event {
     private static void addEvent() {
 
         try {
+            serializeEvent.main(null);
             System.out.println("Event added.");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -92,6 +116,10 @@ public class Event {
         return startTime;
     }
 
+    public void setStartTime(Date startTime) {
+        this.startTime = startTime;
+    }
+
     public void setDate(Date date) {
         this.date = date;
     }
@@ -109,7 +137,7 @@ public class Event {
     }
 
     public void setTitle(String title) {
-        Title = title;
+        this.Title = title;
     }
 
 }
