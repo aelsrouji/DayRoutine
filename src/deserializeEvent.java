@@ -9,7 +9,7 @@ class deserializeEvent {
     public static void main(String[] args) {
         Event e = null;
         try {
-            FileInputStream fileIn = new FileInputStream("C:\\Users\\elsrouay\\IdeaProjects\\DayRoutine\\Temp\\events.ser");
+            FileInputStream fileIn = new FileInputStream("C:\\Users\\ayman\\IdeaProjects\\DayRoutine\\Temp\\events.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             e = (Event) in.readObject();
             in.close();

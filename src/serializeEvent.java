@@ -27,7 +27,7 @@ class serializeEvent {
 
 
             FileOutputStream fileOut =
-                    new FileOutputStream("C:\\Users\\elsrouay\\IdeaProjects\\DayRoutine\\Temp\\events.ser");
+                    new FileOutputStream("C:\\Users\\ayman\\IdeaProjects\\DayRoutine\\Temp\\events.ser");
 
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
 

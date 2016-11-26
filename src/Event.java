@@ -1,25 +1,31 @@
 /**
  * Created by elsrouay on 11/21/2016.
  */
-
 // Edited by Vinicius Ferreira on 24 and 25 November 2016
 
 // VF: importing classes that will be used for the GUI
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.beans.PropertyChangeListener;
+import java.io.Serializable;
 import java.util.Date;
 
-public class Event {
+public class Event implements Serializable{
     private Date date;
     private String Title;
-    private Date startTime;
-    private Date endTime;
+    private String startTime;
+    private String endTime;
     // VF: variables declared in the beginning of development. Might require changes
 
     // VF: Main method invokes the required methods to make windows show up. May be removed afterwards.
+
     public static void main(String[] args) {
         buildFrame();
-        addEvent();
+    }
+
+    private static void addSpecialEvent() {
         SpecialEvent specialEvent = new SpecialEvent();
         specialEvent.buildEventWindow();
 
@@ -28,17 +34,58 @@ public class Event {
     // VF: this method builds the GUI frame when invoked.
     private static void buildFrame() {
         JFrame frame = new JFrame("Welcome to Day Routine App");
-
         try {
 
             // VF: I did not change anything here, but the menu might prove unnecessary.
             //create menu and menu items
             JMenuBar menuBar = new JMenuBar();
             JMenu menuFile = new JMenu("File");
-            JMenuItem menuItemExit = new JMenuItem("Exit");
             JMenuItem menuItemAdd = new JMenuItem("Add Event");
+            JMenuItem menuItemPrintEvent = new JMenuItem("Print Event");
+            JMenuItem menuItemAddSpecial = new JMenuItem("Add Special Event");
+            JMenuItem menuItemExit = new JMenuItem("Exit");
+
             menuFile.add(menuItemAdd);
+            menuFile.add(menuItemPrintEvent);
+            menuFile.add(menuItemAddSpecial);
             menuFile.add(menuItemExit);
+
+            // adding action listeners
+
+            menuItemAdd.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    serializeEvent.main(null);
+
+                }
+            });
+
+            menuItemPrintEvent.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    deserializeEvent.main(null);
+
+                }
+            });
+
+            menuItemAdd.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    serializeEvent.main(null);
+                    System.out.println("Event has been added");
+                }
+            });
+
+            menuItemExit.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    System.exit(0);
+                }
+            });
+
+            menuItemAddSpecial.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    addSpecialEvent();
+                    System.out.println("Special event has been added");
+                }
+            });
+
             menuBar.add(menuFile);
             // add menu bar to the frame
             frame.setJMenuBar(menuBar);
@@ -88,7 +135,7 @@ public class Event {
 
             JButton minusDay = new JButton();
             minusDay.setText("Minus Day");
-            minusDay.setBackground(Color.RED);
+            minusDay.setBackground(Color.red);
             frame.add(minusDay);
 
             // VF: This value should display the date and be changed when buttons "+"/"-" are pressed.
@@ -98,7 +145,7 @@ public class Event {
 
             JButton plusDay = new JButton();
             plusDay.setText("Plus Day");
-            plusDay.setBackground(Color.BLUE);
+            plusDay.setBackground(Color.blue);
             frame.add(plusDay);
 
             frame.add(new JLabel(""));
@@ -148,7 +195,7 @@ public class Event {
 
             JButton minusMonth = new JButton();
             minusMonth.setText("Minus Month");
-            minusMonth.setBackground(Color.RED);
+            minusMonth.setBackground(Color.red);
             frame.add(minusMonth);
 
             JLabel monthLabel = new JLabel("11");
@@ -156,7 +203,7 @@ public class Event {
 
             JButton plusMonth = new JButton();
             plusMonth.setText("Plus Month");
-            plusMonth.setBackground(Color.BLUE);
+            plusMonth.setBackground(Color.blue);
             frame.add(plusMonth);
 
             frame.add(new JLabel(""));
@@ -179,7 +226,7 @@ public class Event {
 
             JButton addEventButton = new JButton();
             addEventButton.setText("Add Event");
-            addEventButton.setBackground(Color.BLUE);
+            addEventButton.setBackground(Color.blue);
             frame.add(addEventButton);
 
             // VF: start of row 6
@@ -205,14 +252,14 @@ public class Event {
 
             JButton editEventButton = new JButton();
             editEventButton.setText("edit Event");
-            editEventButton.setBackground(Color.YELLOW);
+            editEventButton.setBackground(Color.yellow);
             frame.add(editEventButton);
 
             // VF: start of row 7
 
             JButton minusYear = new JButton();
             minusYear.setText("Minus Year");
-            minusYear.setBackground(Color.RED);
+            minusYear.setBackground(Color.red);
             frame.add(minusYear);
 
             JLabel yearLabel = new JLabel("2016");
@@ -220,7 +267,7 @@ public class Event {
 
             JButton plusYear = new JButton();
             plusYear.setText("Plus Year");
-            plusYear.setBackground(Color.BLUE);
+            plusYear.setBackground(Color.blue);
             frame.add(plusYear);
 
             frame.add(new JLabel(""));
@@ -241,7 +288,7 @@ public class Event {
 
             JButton removeEventButton = new JButton();
             removeEventButton.setText("Remove Event");
-            removeEventButton.setBackground(Color.RED);
+            removeEventButton.setBackground(Color.red);
             frame.add(removeEventButton);
 
             // VF: end of rows.
@@ -249,7 +296,6 @@ public class Event {
             frame.setSize(1000, 500);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
-            addEvent();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -284,7 +330,7 @@ public class Event {
 
     }
 
-    public Date getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
@@ -292,11 +338,11 @@ public class Event {
         this.date = date;
     }
 
-    public Date getEndTime() {
+    public String getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Date endTime) {
+    public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
@@ -308,4 +354,7 @@ public class Event {
         Title = title;
     }
 
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
 }
