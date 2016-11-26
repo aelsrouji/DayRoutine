@@ -3,6 +3,7 @@
  */
 
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.text.DateFormat;
@@ -27,11 +28,13 @@ class serializeEvent {
 
             FileOutputStream fileOut =
                     new FileOutputStream("C:\\Users\\elsrouay\\IdeaProjects\\DayRoutine\\Temp\\events.ser");
+
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
+
             out.writeObject(e);
             out.close();
             fileOut.close();
-            System.out.printf("Serialized data is saved in events.ser");
+            System.out.println("Serialized data is saved in events.ser");
         } catch (IOException i) {
             i.printStackTrace();
         }
