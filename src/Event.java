@@ -68,7 +68,7 @@ public class Event implements Serializable{
 
             menuItemAdd.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    serializeEvent.main(null);
+
                     System.out.println("Event has been added");
                 }
             });

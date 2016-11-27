@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="addEvent">
+  <grid id="27dc6" binding="panel1" layout-manager="GridLayoutManager" row-count="6" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="10" vgap="10">
+    <margin top="10" left="10" bottom="10" right="10"/>
+    <constraints>
+      <xy x="20" y="20" width="1234" height="1232"/>
+    </constraints>
+    <properties>
+      <background color="-2168635"/>
+      <enabled value="true"/>
+      <font name="Times New Roman"/>
+      <foreground color="-14990872"/>
+    </properties>
+    <border type="line" title="Day Routine">
+      <color color="-1554840"/>
+    </border>
+    <children>
+      <component id="5ed88" class="javax.swing.JLabel" binding="lblMessage">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <foreground color="-1554840"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="3456a" class="javax.swing.JComboBox" binding="cmbTo">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="00"/>
+            <item value="01"/>
+            <item value="02"/>
+            <item value="03"/>
+            <item value="04"/>
+            <item value="05"/>
+            <item value="06"/>
+            <item value="07"/>
+            <item value="08"/>
+            <item value="09"/>
+            <item value="10"/>
+            <item value="11"/>
+            <item value="12"/>
+            <item value="13"/>
+            <item value="14"/>
+            <item value="15"/>
+            <item value="16"/>
+            <item value="17"/>
+            <item value="18"/>
+            <item value="19"/>
+            <item value="20"/>
+            <item value="21"/>
+            <item value="22"/>
+            <item value="23"/>
+            <item value="24"/>
+          </model>
+        </properties>
+      </component>
+      <component id="872d6" class="javax.swing.JComboBox" binding="cmbType">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <minimum-size width="100" height="-1"/>
+            <preferred-size width="100" height="-1"/>
+            <maximum-size width="100" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <background color="-6428462"/>
+          <model>
+            <item value="Love"/>
+            <item value="Eat"/>
+            <item value="Pray"/>
+            <item value="Relax"/>
+            <item value="Sleep"/>
+            <item value="Work"/>
+          </model>
+          <toolTipText value="Select event type"/>
+        </properties>
+      </component>
+      <component id="eb9c9" class="javax.swing.JComboBox" binding="cmbFrom">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="00"/>
+            <item value="01"/>
+            <item value="02"/>
+            <item value="03"/>
+            <item value="04"/>
+            <item value="05"/>
+            <item value="06"/>
+            <item value="07"/>
+            <item value="08"/>
+            <item value="09"/>
+            <item value="10"/>
+            <item value="11"/>
+            <item value="12"/>
+            <item value="13"/>
+            <item value="14"/>
+            <item value="15"/>
+            <item value="16"/>
+            <item value="17"/>
+            <item value="18"/>
+            <item value="19"/>
+            <item value="20"/>
+            <item value="21"/>
+            <item value="22"/>
+            <item value="23"/>
+            <item value="24"/>
+          </model>
+        </properties>
+      </component>
+      <component id="c7e33" class="javax.swing.JButton" binding="btnAdd">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Add"/>
+        </properties>
+      </component>
+      <component id="a8226" class="javax.swing.JTable" binding="tblEvents">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="6" anchor="9" fill="0" indent="3" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <autoResizeMode value="4"/>
+          <background color="-58999"/>
+          <cellSelectionEnabled value="true"/>
+          <dragEnabled value="true"/>
+          <updateSelectionOnSort value="true"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
