@@ -27,7 +27,7 @@ class deserializeEvent {
         System.out.println("Title: " + e.getTitle());
         System.out.println("Start: " + e.getStartTime());
         System.out.println("End: " + e.getEndTime());
-
+        //System.out.println("Special: " + e.getEventDescription());
 
     }
 }

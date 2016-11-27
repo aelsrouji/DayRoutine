@@ -5,10 +5,8 @@ import java.awt.*;
 import java.util.Date;
 
 /**
- * Created by elsrouay on 11/22/2016.
+ * Created by Samatra on 11/22/2016.
  */
-
-// Edited by Vinicius Ferreira on 26/11/2016.
 
 public class SpecialEvent extends Event{
     private String eventDescription;
@@ -21,6 +19,7 @@ public class SpecialEvent extends Event{
         this.eventDescription = eventDescription;
 
     }
+
 
     public void buildEventWindow() {
         JFrame eventFrame = new JFrame("Change Events");

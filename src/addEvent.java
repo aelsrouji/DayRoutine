@@ -1,15 +1,12 @@
 import javax.swing.*;
-import java.awt.*;
-import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
 
 /**
- * Created by ayman on 2016-11-26.
+ * Created by Samatra on 2016-11-26.
  */
+
 public class addEvent {
 
     private JComboBox cmbType;
@@ -19,6 +16,9 @@ public class addEvent {
     private JComboBox cmbFrom;
     private JComboBox cmbTo;
     private  JTable tblEvents;
+    private JButton btnDisplay;
+    private JCheckBox chkSpecial;
+    private JTextField txtDescription;
 
 
     public addEvent() {
@@ -31,35 +31,50 @@ public class addEvent {
 
         btnAdd.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                btnAdd.addActionListener(new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        try {
-                            DefaultTableModel mdl = new DefaultTableModel();
-                            String header[] = new String[]{"Event", "From", "To"};
-                            mdl.setColumnIdentifiers(header);
-                            tblEvents.setModel(mdl);
-                            mdl.addRow(new Object[] { cmbType.getSelectedItem().toString(), cmbFrom.getSelectedItem(),cmbTo.getSelectedItem() });
-                            mdl.addRow(new Object[] { "v2" });
-                 /*   String[] myEvent = new String[]{
-                     cmbType.getSelectedItem().toString(),
-                     cmbFrom.getSelectedItem().toString(),
-                     cmbTo.getSelectedItem().toString()}; */
+                System.out.println(txtDescription.getText());
+                if (chkSpecial.isSelected() && txtDescription.getText()=="")
+                {
+                    System.out.println("Please add description for this special event, it is selected");
+                    return;
+                }
 
-                        }
+                Event event = new Event();
+                SpecialEvent specialEvent = new SpecialEvent();
 
+                if (chkSpecial.isSelected()) {
+                    DefaultTableModel mdl = new DefaultTableModel();
+                    String header[] = new String[]{"Event", "From", "To"};
+                    mdl.setColumnIdentifiers(header);
+                    tblEvents.setModel(mdl);
+                    mdl.addRow(new Object[]{cmbType.getSelectedItem().toString(), cmbFrom.getSelectedItem(), cmbTo.getSelectedItem()});
 
-                        catch (Exception ex)
-                        {System.out.println(ex.getMessage());}
-                    }
-                });
+                    event.setTitle(cmbType.getSelectedItem().toString());
+                    event.setStartTime(cmbFrom.getSelectedItem().toString());
+                    event.setEndTime(cmbTo.getSelectedItem().toString());
+                    serializeEvent.main(null,event);
+                } else {
+                    SpecialEvent specialevent = new SpecialEvent();
+                    specialevent.setStartTime(cmbFrom.getSelectedItem().toString());
+                    specialevent.setEndTime(cmbTo.getSelectedItem().toString());
+                    specialevent.setTitle(cmbType.getSelectedItem().toString());
+                    specialevent.setEventDescription(txtDescription.getText());
+                    serializeEvent.main(null, specialevent);
+                }
+
             }
 
+        });
 
+        btnDisplay.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                deserializeEvent.main(null);
+            }
         });
     }
 
 
     public static void main(String[] args) {
+    try {
 
 
         JFrame frame = new JFrame("addEvent");
@@ -67,9 +82,13 @@ public class addEvent {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
+
     }
+    catch (Exception ex)
+    {
+        System.out.println(ex.getStackTrace());
 
-
-
+    }
+    }
 
 }

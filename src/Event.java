@@ -8,7 +8,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -54,7 +53,7 @@ public class Event implements Serializable{
 
             menuItemAdd.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    serializeEvent.main(null);
+                   // serializeEvent.main(null, e);
 
                 }
             });
