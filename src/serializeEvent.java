@@ -14,7 +14,6 @@ class serializeEvent {
         serialize(e);
     }
 
-
     private static void serialize(Event e)
     {
         try {
