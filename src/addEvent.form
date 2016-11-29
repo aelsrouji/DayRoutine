@@ -24,43 +24,9 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="3456a" class="javax.swing.JComboBox" binding="cmbTo">
-        <constraints>
-          <grid row="4" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <model>
-            <item value="00"/>
-            <item value="01"/>
-            <item value="02"/>
-            <item value="03"/>
-            <item value="04"/>
-            <item value="05"/>
-            <item value="06"/>
-            <item value="07"/>
-            <item value="08"/>
-            <item value="09"/>
-            <item value="10"/>
-            <item value="11"/>
-            <item value="12"/>
-            <item value="13"/>
-            <item value="14"/>
-            <item value="15"/>
-            <item value="16"/>
-            <item value="17"/>
-            <item value="18"/>
-            <item value="19"/>
-            <item value="20"/>
-            <item value="21"/>
-            <item value="22"/>
-            <item value="23"/>
-            <item value="24"/>
-          </model>
-        </properties>
-      </component>
       <component id="eb9c9" class="javax.swing.JComboBox" binding="cmbFrom">
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <model>
@@ -160,6 +126,40 @@
           </grid>
         </constraints>
         <properties/>
+      </component>
+      <component id="3456a" class="javax.swing.JComboBox" binding="cmbTo">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="7" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="00"/>
+            <item value="01"/>
+            <item value="02"/>
+            <item value="03"/>
+            <item value="04"/>
+            <item value="05"/>
+            <item value="06"/>
+            <item value="07"/>
+            <item value="08"/>
+            <item value="09"/>
+            <item value="10"/>
+            <item value="11"/>
+            <item value="12"/>
+            <item value="13"/>
+            <item value="14"/>
+            <item value="15"/>
+            <item value="16"/>
+            <item value="17"/>
+            <item value="18"/>
+            <item value="19"/>
+            <item value="20"/>
+            <item value="21"/>
+            <item value="22"/>
+            <item value="23"/>
+            <item value="24"/>
+          </model>
+        </properties>
       </component>
     </children>
   </grid>

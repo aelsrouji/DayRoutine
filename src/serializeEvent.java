@@ -21,7 +21,7 @@ class serializeEvent {
             DateFormat sdf = new SimpleDateFormat("hh:mm");
 
             FileOutputStream fileOut =
-                    new FileOutputStream("C:\\Users\\ayman\\IdeaProjects\\DayRoutine\\Temp\\events.ser");
+                    new FileOutputStream("C:\\Users\\elsrouay\\IdeaProjects\\DayRoutineApp\\EventStore\\events.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
 
             out.writeObject(e);

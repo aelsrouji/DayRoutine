@@ -32,7 +32,9 @@ public class addEvent {
         btnAdd.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 System.out.println(txtDescription.getText());
-                if (chkSpecial.isSelected() && txtDescription.getText()=="")
+                System.out.println(chkSpecial.isSelected());
+
+                if (chkSpecial.isSelected()== true && txtDescription.getText().trim().equals(""))
                 {
                     System.out.println("Please add description for this special event, it is selected");
                     return;
@@ -76,6 +78,7 @@ public class addEvent {
     public static void main(String[] args) {
     try {
 
+            ReadTextFile.main(null);
 
         JFrame frame = new JFrame("addEvent");
         frame.setContentPane(new addEvent().panel1);
