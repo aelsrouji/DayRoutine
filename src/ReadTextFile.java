@@ -24,7 +24,7 @@ public class ReadTextFile {
     public static void openFile() {
 
         try {
-            input = new Scanner(Paths.get("events.txt"));
+            input = new Scanner(Paths.get("C:\\Users\\elsrouay\\IdeaProjects\\DayRoutineApp\\EventStore\\events.txt"));
         } catch (IOException ioException) {
             System.err.println("Error opening file. Terminating.");
             System.exit(1);
@@ -34,12 +34,12 @@ public class ReadTextFile {
 
     // read record from file
     public static void readRecords() {
-        System.out.printf("Title", "Description", "From", "To");
+        System.out.println("Title\t Description \t From \t To");
 
         try {
             while (input.hasNext()) // while there is more to read
             {
-                System.out.println(input.next() + "--" + input.next() + "--" + input.next() + "--" + input.next());
+                System.out.println(input.next() + "\t" + input.next() + "\t" + input.next() + "\t" + input.next() );
             }
         } catch (NoSuchElementException elementException) {
             System.err.println("File improperly formed.");

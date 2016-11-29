@@ -77,6 +77,7 @@ public class addEvent {
 
     public static void main(String[] args) {
     try {
+        CreateTextFile.main(null);
 
             ReadTextFile.main(null);
 
