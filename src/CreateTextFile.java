@@ -24,7 +24,7 @@
          {
          try
          {
-             output = new Formatter("C:\\Users\\ayman\\IdeaProjects\\DayRoutineApp\\EventStore\\events.txt");
+             output = new Formatter("C:\\Users\\elsrouay\\IdeaProjects\\DayRoutineApp\\EventStore\\events.txt");
          }
          catch (SecurityException securityException)
          {
