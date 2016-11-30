@@ -7,21 +7,23 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 class serializeEvent {
 
-    public static void main(String[] args, Event e) {
+    public static void main(String[] args, List<Event> e) {
         serialize(e);
     }
 
-    private static void serialize(Event e)
+
+    private static void serialize(List<Event> e)
     {
         try {
 
             DateFormat sdf = new SimpleDateFormat("hh:mm");
 
             FileOutputStream fileOut =
-                    new FileOutputStream("C:\\Users\\elsrouay\\IdeaProjects\\DayRoutineApp\\EventStore\\events.ser");
+                    new FileOutputStream("C:\\Users\\ayman\\IdeaProjects\\DayRoutineApp\\EventStore\\events.ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
 
             out.writeObject(e);

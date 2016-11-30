@@ -12,10 +12,10 @@
          public class CreateTextFile{
     private static Formatter output;
 
-         public static void main(String[] args)
+         public static void main(String[] args,Event e)
          {
          openFile();
-         addRecords();
+         addRecords(e);
          closeFile();
          }
 
@@ -24,7 +24,7 @@
          {
          try
          {
-             output = new Formatter("C:\\Users\\elsrouay\\IdeaProjects\\DayRoutineApp\\EventStore\\events.txt");
+             output = new Formatter("C:\\Users\\ayman\\IdeaProjects\\DayRoutineApp\\EventStore\\events.txt");
          }
          catch (SecurityException securityException)
          {
@@ -39,7 +39,7 @@
          }
 
         // add records to file
-         public static void addRecords() {
+         public static void addRecords(Event e) {
              Scanner input = new Scanner(System.in);
 
              System.out.println("Enter Type, description if special, start timne and end time. Enter end-of-file indicator to end input.");

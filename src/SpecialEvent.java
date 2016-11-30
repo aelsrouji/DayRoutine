@@ -6,6 +6,7 @@ import java.util.Date;
 
 /**
  * Created by Samatra on 11/22/2016.
+ * SpecialEvent inherits event class and adds eventDescription
  */
 
 public class SpecialEvent extends Event{
@@ -15,11 +16,12 @@ public class SpecialEvent extends Event{
         return eventDescription;
     }
 
-    public void setEventDescription(String eventDescription) {
+     public void setEventDescription(String eventDescription) {
         this.eventDescription = eventDescription;
 
     }
 
+/* This was commented because we redesigned the UI to add check box IsSpecial to the add Event class
 
     public void buildEventWindow() {
         JFrame eventFrame = new JFrame("Change Events");
@@ -111,7 +113,7 @@ public class SpecialEvent extends Event{
             // VF: end of rows.
 
             eventFrame.setSize(1000, 500);
-            eventFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            eventFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); // altered to change behaviour of "X" button 
             eventFrame.setVisible(true);
 
 
@@ -120,7 +122,7 @@ public class SpecialEvent extends Event{
         }
 
     }
-
+*/
 }
 
 

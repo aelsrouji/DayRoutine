@@ -26,7 +26,7 @@ public class Event implements Serializable{
 
     private static void addSpecialEvent() {
         SpecialEvent specialEvent = new SpecialEvent();
-        specialEvent.buildEventWindow();
+        //specialEvent.buildEventWindow();
 
     }
 
@@ -60,7 +60,6 @@ public class Event implements Serializable{
 
             menuItemPrintEvent.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
-                    deserializeEvent.main(null);
 
                 }
             });
@@ -139,8 +138,17 @@ public class Event implements Serializable{
 
             // VF: This value should display the date and be changed when buttons "+"/"-" are pressed.
 
-            JLabel dayLabel = new JLabel("22");
+            int dayLabelInt = 10;
+
+            final JLabel dayLabel = new JLabel(Integer.toString(dayLabelInt));
             frame.add(dayLabel);
+
+            minusDay.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    dayLabel.setText("test");
+                }
+            });
 
             JButton plusDay = new JButton();
             plusDay.setText("Plus Day");
@@ -228,6 +236,12 @@ public class Event implements Serializable{
             addEventButton.setBackground(Color.blue);
             frame.add(addEventButton);
 
+            addEventButton.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    addSpecialEvent();
+                }
+            });
+
             // VF: start of row 6
 
             frame.add(new JLabel(""));
@@ -249,10 +263,16 @@ public class Event implements Serializable{
 
             frame.add(new JLabel(""));
 
+            //VF: Removing Edit Event button, substituting for a blank JLabel
+
+            frame.add(new JLabel(""));
+
+            /*
             JButton editEventButton = new JButton();
             editEventButton.setText("edit Event");
             editEventButton.setBackground(Color.yellow);
             frame.add(editEventButton);
+            */
 
             // VF: start of row 7
 
@@ -289,6 +309,12 @@ public class Event implements Serializable{
             removeEventButton.setText("Remove Event");
             removeEventButton.setBackground(Color.red);
             frame.add(removeEventButton);
+
+            removeEventButton.addActionListener(new ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    addSpecialEvent();
+                }
+            });
 
             // VF: end of rows.
 
@@ -356,4 +382,5 @@ public class Event implements Serializable{
     public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
+
 }

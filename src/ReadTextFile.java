@@ -24,7 +24,7 @@ public class ReadTextFile {
     public static void openFile() {
 
         try {
-            input = new Scanner(Paths.get("C:\\Users\\elsrouay\\IdeaProjects\\DayRoutineApp\\EventStore\\events.txt"));
+            input = new Scanner(Paths.get("C:\\Users\\ayman\\IdeaProjects\\DayRoutineApp\\EventStore\\events.txt"));
         } catch (IOException ioException) {
             System.err.println("Error opening file. Terminating.");
             System.exit(1);
@@ -34,6 +34,7 @@ public class ReadTextFile {
 
     // read record from file
     public static void readRecords() {
+        System.out.println("Now Reading from events.txt file");
         System.out.println("Title\t Description \t From \t To");
 
         try {
