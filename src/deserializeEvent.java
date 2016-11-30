@@ -1,9 +1,12 @@
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.net.StandardSocketOptions;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static java.util.Arrays.asList;
 
 /**
  * Created by elsrouay on 11/23/2016.
@@ -15,7 +18,9 @@ class deserializeEvent {
             FileInputStream fileIn = new FileInputStream("C:\\Users\\elsrouay\\IdeaProjects\\DayRoutineApp\\EventStore\\events.ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
 
-            allEvents = Arrays.asList((Event[])in.readObject());
+            System.out.println(allEvents.size());
+
+            allEvents = Arrays.asList((Event[]) in.readObject());
             //allEvents = new ArrayList<>(Arrays.asList((Event[])in.readObject()));
 
             System.out.println("The events you entered are:");
